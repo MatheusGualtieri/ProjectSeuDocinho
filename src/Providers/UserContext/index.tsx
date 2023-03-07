@@ -9,7 +9,7 @@ import { api } from "../../Services";
 
 export const UserContext = createContext({} as IUserContext);
 
-const UserProvider = ({ children }: IUserContextProps) => {
+export const UserProvider = ({ children }: IUserContextProps) => {
   const [user, setUser] = useState<IUser | null>(null);
   const tokenOnLocalStorage = window.localStorage.getItem("") || null;
   const [token, setToken] = useState(tokenOnLocalStorage);
@@ -38,3 +38,5 @@ const UserProvider = ({ children }: IUserContextProps) => {
     </UserContext.Provider>
   );
 };
+
+export const useUserContext = useContext(UserContext);
