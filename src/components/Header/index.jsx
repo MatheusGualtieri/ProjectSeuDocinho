@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaSistrix } from "react-icons/fa";
-// import { IoClose } from "react-icons/io";
-import { GrFormClose } from "react-icons/gr";
 import { IoMdExit } from "react-icons/io";
 import { StyledHeader } from "./style";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { MdClose } from "react-icons/md";
 import Logo from "../../assets/Logo.png";
 import { StyledDropDown } from "./styleDropDown";
 
@@ -19,10 +19,12 @@ const Header = () => {
           <FaSistrix className="image" />
           <FaShoppingCart className="image" />
           {dropDown ? (
-            <GrFormClose className="image" onClick={() => setDropDown(false)} />
+            <MdClose className="image" onClick={() => setDropDown(false)} />
           ) : (
-            <></>
-            // <IoClose className="image" onClick={() => setDropDown(true)} />
+            <GiHamburgerMenu
+              className="image"
+              onClick={() => setDropDown(true)}
+            />
           )}
           <IoMdExit className="image" />
         </div>
