@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledDropDown = styled.div`
+export const StyledDropDownMenu = styled.div`
   display: flex;
   gap: 20px;
 

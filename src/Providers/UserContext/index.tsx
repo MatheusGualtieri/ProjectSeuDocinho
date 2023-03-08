@@ -18,16 +18,16 @@ export const UserProvider = ({ children }: IUserContextProps) => {
 
   const userLogin = async (data: ILoginFormValue) => {
     try {
-      setLoading(true)
+      setLoading(true);
       const response = await api.post("/signup", data);
       setUser(response.data);
       console.log(response);
     } catch (error) {
-      console.log(error)
-    }finally{
+      console.log(error);
+    } finally {
       setLoading(false);
     }
-  }
+  };
 
   const updateUser = async (data: IUserUpdate) => {
     try {
