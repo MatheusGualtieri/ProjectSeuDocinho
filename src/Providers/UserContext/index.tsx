@@ -4,6 +4,7 @@ import {
   IUserContext,
   IUserUpdate,
   IUser,
+  ILoginFormValue,
 } from "./@typesUser";
 import { api } from "../../Services";
 
@@ -14,6 +15,19 @@ export const UserProvider = ({ children }: IUserContextProps) => {
   const tokenOnLocalStorage = window.localStorage.getItem("") || null;
   const [token, setToken] = useState(tokenOnLocalStorage);
   const [loading, setLoading] = useState(false);
+
+  const userLogin = async (data: ILoginFormValue) => {
+    try {
+      setLoading(true)
+      const response = await api.post("/signup", data);
+      setUser(response.data);
+      console.log(response);
+    } catch (error) {
+      console.log(error)
+    }finally{
+      setLoading(false);
+    }
+  }
 
   const updateUser = async (data: IUserUpdate) => {
     try {
@@ -33,7 +47,7 @@ export const UserProvider = ({ children }: IUserContextProps) => {
   };
 
   return (
-    <UserContext.Provider value={{ user, loading, updateUser }}>
+    <UserContext.Provider value={{ user, loading, updateUser, userLogin }}>
       {children}
     </UserContext.Provider>
   );

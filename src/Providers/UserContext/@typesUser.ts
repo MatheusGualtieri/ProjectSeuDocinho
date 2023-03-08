@@ -25,4 +25,9 @@ export interface IUserContext {
   user: IUser | null;
   loading: boolean;
   updateUser: (data: IUserUpdate) => Promise<void>;
+  userLogin: (data: ILoginFormValue) => Promise<void>;
+}
+export interface ILoginFormValue {
+  email: string;
+  password: string;
 }
