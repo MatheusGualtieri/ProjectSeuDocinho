@@ -4,6 +4,9 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { IUserUpdate } from "../../../Providers/UserContext/@typesUser";
+import { StyledForm } from "./style";
+import { ButtonPrimary } from "../../../styles/buttons";
+
 const formSchema = yup.object({
   email: yup.string().email("E-mail inválido"),
   adress: yup.string(),
@@ -26,7 +29,7 @@ const UpdateForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmitFunction)}>
+    <StyledForm onSubmit={handleSubmit(onSubmitFunction)}>
       <h2>Atualizar informações</h2>
       <Input
         label="Email"
@@ -68,8 +71,8 @@ const UpdateForm = () => {
         error={errors.confirmPassword?.message}
         type="password"
       />
-      <button type="submit">Enviar</button>
-    </form>
+      <ButtonPrimary type="submit">Enviar</ButtonPrimary>
+    </StyledForm>
   );
 };
 export default UpdateForm;
