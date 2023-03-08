@@ -12,6 +12,7 @@ export interface IUser {
 export interface IUserUpdate {
   email: string;
   password: string;
+  confirmPassword: string;
   adress: string;
   phone: number;
 }
