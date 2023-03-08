@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaSistrix } from "react-icons/fa";
 import { IoMdExit } from "react-icons/io";
@@ -7,9 +7,11 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClose } from "react-icons/md";
 import Logo from "../../assets/Logo.png";
 import { StyledDropDown } from "./styleDropDown";
+import { UserContext } from "../../Providers/UserContext";
 
 const Header = () => {
   const [dropDown, setDropDown] = useState(false);
+  const {setModalLog, setModalReg} = useContext(UserContext)
 
   return (
     <StyledHeader>
@@ -32,8 +34,8 @@ const Header = () => {
       <div className="conteinerDropDown">
         {dropDown && (
           <StyledDropDown dropDown={dropDown} className="dropDown">
-            <button>Login</button>
-            <button>Cadastrar</button>
+            <button type="button" onClick={() => setModalLog(true)}>Login</button>
+            <button type="button" onClick={() => setModalReg(true)} >Cadastrar</button>
             <button>Perfil</button>
           </StyledDropDown>
         )}

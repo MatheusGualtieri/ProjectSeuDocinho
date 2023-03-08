@@ -26,8 +26,21 @@ export interface IUserContext {
   loading: boolean;
   updateUser: (data: IUserUpdate) => Promise<void>;
   userLogin: (data: ILoginFormValue) => Promise<void>;
+  userRegister: (data: IRegisterFormValue) => Promise<void>;
+  modalLogin: boolean;
+  setModalLogin: React.Dispatch<React.SetStateAction<boolean>>;
+  modalRegister: boolean;
+  setModalRegister: React.Dispatch<React.SetStateAction<boolean>>;
 }
 export interface ILoginFormValue {
   email: string;
   password: string;
+}
+export interface IRegisterFormValue{
+  name: string;
+  email: string; 
+  adress: string;
+ phone: string;
+ password: string;
+ confirmPassword: string;
 }
