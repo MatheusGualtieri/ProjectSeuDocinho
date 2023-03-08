@@ -1,5 +1,9 @@
 import { IInputProps } from "./@typesInput";
 import { forwardRef, useState } from "react";
+import { StyledInputPassword, StyledContainerInput } from "./style";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { ButtonIcon } from "../../styles/buttons";
+
 const InputPassword = forwardRef<HTMLInputElement, IInputProps>(
   ({ label, inputId, placeholder, type, error, ...rest }, ref) => {
     const [inputType, setInputType] = useState(type);
@@ -13,16 +17,18 @@ const InputPassword = forwardRef<HTMLInputElement, IInputProps>(
     return (
       <>
         <label htmlFor={inputId}>{label}</label>
-        <input
-          placeholder={placeholder}
-          id={inputId}
-          type={inputType}
-          {...rest}
-          ref={ref}
-        />
-        <button type="button" onClick={() => toggleViewInput()}>
-          Mostrar Senha
-        </button>
+        <StyledContainerInput>
+          <StyledInputPassword
+            placeholder={placeholder}
+            id={inputId}
+            type={inputType}
+            {...rest}
+            ref={ref}
+          />
+          <ButtonIcon type="button" onClick={() => toggleViewInput()}>
+            {inputType === "password" ? <FaEye /> : <FaEyeSlash />}
+          </ButtonIcon>
+        </StyledContainerInput>
         <p>{error}</p>
       </>
     );
