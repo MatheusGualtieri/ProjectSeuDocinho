@@ -1,18 +1,21 @@
 import { IInputProps } from "./@typesInput";
+import { forwardRef } from "react";
+const Input = forwardRef<HTMLInputElement, IInputProps>(
+  ({ label, inputId, placeholder, type, error, ...rest }, ref) => {
+    return (
+      <>
+        <label htmlFor={inputId}>{label}</label>
+        <input
+          placeholder={placeholder}
+          id={inputId}
+          type={type}
+          {...rest}
+          ref={ref}
+        />
+        <p>{error}</p>
+      </>
+    );
+  }
+);
 
-const Input = ({
-  label,
-  inputId,
-  placeholder,
-  type,
-  error,
-  ...rest
-}: IInputProps) => {
-  return (
-    <>
-      <label htmlFor={inputId}>{label}</label>
-      <input placeholder={label} id={inputId} type={type} {...rest} />
-      <p>{error}</p>
-    </>
-  );
-};
+export default Input;
