@@ -37,73 +37,71 @@ const ModalRegister = () => {
     resolver: yupResolver(formSchemRegister),
   });
 
-  const submit: SubmitHandler<IRegisterFormValue>= (data) => {
+  const submit: SubmitHandler<IRegisterFormValue> = (data) => {
     userRegister(data);
-    console.log("oi")
+    console.log("oi");
   };
 
-
   return (
-
     <StyledRegister>
       <div className="box">
-      <header>
-        <h2>Cadastro</h2>
-        <span onClick={() => setModalReg(false)}>x</span>
-      </header>
-      <form onSubmit={handleSubmit(submit)}>
-      <Input
-          label="Name"
-          placeholder="Digite seu nome"
-          inputId="name"
-          {...register("name")}
-          error={errors.name?.message}
-          type="text"
-        />
+        <header>
+          <h2>Cadastro</h2>
+          <span onClick={() => setModalReg(false)}>x</span>
+        </header>
+        <form onSubmit={handleSubmit(submit)}>
+          <Input
+            label="Name"
+            placeholder="Digite seu nome"
+            inputId="name"
+            {...register("name")}
+            error={errors.name?.message}
+            type="text"
+          />
 
-        <Input
-          label="Email"
-          placeholder="Digite seu email"
-          inputId="email"
-          {...register("email")}
-          error={errors.email?.message}
-          type="text"
-        />
+          <Input
+            label="Email"
+            placeholder="Digite seu email"
+            inputId="email"
+            {...register("email")}
+            error={errors.email?.message}
+            type="text"
+          />
 
-        <Input
-          label="Endereço"
-          placeholder="Digite seu endereço"
-          inputId="adress"
-          {...register("adress")}
-          error={errors.adress?.message}
-          type="text"
-        />
-        <Input
-          label="Telefone/Celular"
-          placeholder="Digite seu número"
-          inputId="phone"
-          {...register("phone")}
-          error={errors.phone?.message}
-          type="text"
-        />
-        <Input
-          label="Senha"
-          placeholder="Digite sua senha"
-          inputId="password"
-          {...register("password")}
-          error={errors.password?.message}
-          type="password"
-        />
-        <Input
-          label="Confirmar Senha"
-          placeholder="Confirme sua senha"
-          inputId="confirmPassword"
-          {...register("confirmPassword")}
-          error={errors.confirmPassword?.message}
-          type="password"
-        />
-        <ButtonPrimary type="submit">Enviar</ButtonPrimary>
-      </form>
+          <Input
+            label="Endereço"
+            placeholder="Digite seu endereço"
+            inputId="adress"
+            {...register("adress")}
+            error={errors.adress?.message}
+            type="text"
+          />
+          <Input
+            label="Telefone/Celular"
+            placeholder="Digite seu número"
+            inputId="phone"
+            {...register("phone")}
+            error={errors.phone?.message}
+            type="text"
+          />
+          <Input
+            label="Senha"
+            placeholder="Digite sua senha"
+            inputId="password"
+            {...register("password")}
+            error={errors.password?.message}
+            type="password"
+          />
+          <Input
+            label="Confirmar Senha"
+            placeholder="Confirme sua senha"
+            inputId="confirmPassword"
+            {...register("confirmPassword")}
+            error={errors.confirmPassword?.message}
+            type="password"
+          />
+          <ButtonPrimary type="submit">Enviar</ButtonPrimary>
+        </form>
       </div>
     </StyledRegister>
   );
