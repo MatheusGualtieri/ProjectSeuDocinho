@@ -11,12 +11,15 @@ import { StyledDropDownSearch } from "./styleDropDownSearch";
 import { ProductContext } from "../../Providers/ProductContext/ProductContext";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { ITag } from "../../Providers/ProductContext/@typesProduct";
+import React from "react";
+import { UserContext } from "../../Providers/UserContext";
 
 const Header = () => {
   const [dropDown, setDropDown] = useState(false);
   const [dropDownSearch, setDropDownSearch] = useState(false);
   const { register, handleSubmit } = useForm<ITag>();
   const { searchProduct } = useContext(ProductContext);
+  const { setModalLog, setModalReg } = useContext(UserContext);
 
   const submit: SubmitHandler<ITag> = (data) => {
     searchProduct(data);
@@ -49,8 +52,12 @@ const Header = () => {
         <div className="conteinerDropDown">
           {dropDown && (
             <StyledDropDownMenu>
-              <button>Login</button>
-              <button>Cadastrar</button>
+              <button type="button" onClick={() => setModalLog(true)}>
+                Login
+              </button>
+              <button type="button" onClick={() => setModalReg(true)}>
+                Cadastrar
+              </button>
               <button>Perfil</button>
             </StyledDropDownMenu>
           )}
