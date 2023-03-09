@@ -3,7 +3,7 @@ import {
   IProductContext,
   IDefaultProviderProps,
   IProducts,
-  ITag,
+  ITitle,
 } from "./@typesProduct";
 import { api } from "../../Services";
 
@@ -23,10 +23,11 @@ export const ProductProvider = ({ children }: IDefaultProviderProps) => {
     }
   };
 
-  const searchProduct = (data: ITag) => {
+  const searchProduct = (data: ITitle) => {
+    console.log(data);
     if (selectProduct !== null) {
       const productFound = selectProduct.filter(
-        (product) => product.tag === data.tag
+        (product) => product.title === data.title
       );
       setProducts([...productFound]);
     }

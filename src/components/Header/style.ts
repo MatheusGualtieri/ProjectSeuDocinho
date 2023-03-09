@@ -16,6 +16,8 @@ export const StyledHeader = styled.header`
     width: 100%;
     max-width: 1200px;
     display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   button {
@@ -36,7 +38,14 @@ export const StyledHeader = styled.header`
   @media (min-width: 500px) {
     display: flex;
     justify-content: center;
+
+    .color {
+      display: flex;
+
+      align-items: flex-end;
+    }
   }
+
   .conteinerImageMenu {
     width: 100%;
     display: flex;
@@ -58,6 +67,8 @@ export const StyledHeader = styled.header`
     .image {
       width: 20px;
       height: 20px;
+
+      cursor: pointer;
 
       color: var(--color-image);
     }

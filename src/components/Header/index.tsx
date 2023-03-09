@@ -10,15 +10,15 @@ import { StyledDropDownMenu } from "./styleDropDownMenu";
 import { StyledDropDownSearch } from "./styleDropDownSearch";
 import { ProductContext } from "../../Providers/ProductContext/ProductContext";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { ITag } from "../../Providers/ProductContext/@typesProduct";
+import { ITitle } from "../../Providers/ProductContext/@typesProduct";
 
 const Header = () => {
   const [dropDown, setDropDown] = useState(false);
   const [dropDownSearch, setDropDownSearch] = useState(false);
-  const { register, handleSubmit } = useForm<ITag>();
+  const { register, handleSubmit } = useForm<ITitle>();
   const { searchProduct } = useContext(ProductContext);
 
-  const submit: SubmitHandler<ITag> = (data) => {
+  const submit: SubmitHandler<ITitle> = (data) => {
     searchProduct(data);
   };
 
@@ -61,8 +61,8 @@ const Header = () => {
               <form onSubmit={handleSubmit(submit)}>
                 <input
                   type="text"
-                  placeholder="Faça sua pesquisa"
-                  {...register("tag")}
+                  placeholder="Digite o nome do produto"
+                  {...register("title")}
                 />
                 <button type="submit">
                   {<FaSistrix className="searach" />}
