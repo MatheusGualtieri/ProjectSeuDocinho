@@ -18,21 +18,6 @@ export const StyledHeader = styled.header`
     display: flex;
   }
 
-  button {
-    height: 37px;
-
-    border-radius: 5px;
-    border: 1px solid var(--color-add-product);
-
-    background-color: var(--color-primary);
-    color: var(--color-add-product);
-  }
-
-  button:hover {
-    background-color: var(--color-add-product);
-    color: var(--color-primary);
-  }
-
   @media (min-width: 500px) {
     display: flex;
     justify-content: center;
