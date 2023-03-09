@@ -5,9 +5,8 @@ export const StyledFooter = styled.footer`
   justify-content: space-between;
   align-items: center;
 
-  position: absolute;
-  bottom: 0px;
-
+  position: relative;
+  bottom: 0;
   width: 100%;
   height: 47px;
 

@@ -11,7 +11,12 @@ export interface IProducts {
   id: number;
 }
 
+export interface ITag {
+  tag: string;
+}
+
 export interface IProductContext {
   setProducts: React.Dispatch<React.SetStateAction<IProducts[] | null>>;
   products: IProducts[] | null;
+  searchProduct: (data: ITag) => void;
 }

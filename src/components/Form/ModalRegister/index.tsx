@@ -99,7 +99,6 @@ const ModalRegister = () => {
           error={errors.confirmPassword?.message}
           type="password"
         />
-
         <ButtonPrimary type="submit">Enviar</ButtonPrimary>
       </form>
       </div>

@@ -8,7 +8,9 @@ const Footer = () => {
     <StyledFooter>
       <img src={Logo} alt="" />
       <div className="footerImage">
-        <AiFillInstagram className="image" />
+        <a href="https://www.instagram.com/seudocinho.sc/" target="_blank">
+          <AiFillInstagram className="image" />
+        </a>
         <IoLogoWhatsapp className="image" />
       </div>
     </StyledFooter>
