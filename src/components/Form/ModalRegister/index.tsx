@@ -43,13 +43,14 @@ const ModalRegister = () => {
 
   return (
     <StyledRegister>
+      <div className="box">
       <header>
         <h2>cadastro</h2>
         <span onClick={() => setModalReg(false)}>x</span>
       </header>
       <form onSubmit={handleSubmit(submit)}>
       <Input
-          label="name"
+          label="Name"
           placeholder="Digite seu nome"
           inputId="name"
           {...register("name")}
@@ -101,6 +102,7 @@ const ModalRegister = () => {
 
         <ButtonPrimary type="submit">Enviar</ButtonPrimary>
       </form>
+      </div>
     </StyledRegister>
   );
 };
