@@ -26,7 +26,6 @@ export const UserProvider = ({ children }: IUserContextProps) => {
       const response = await api.post("register", data);
       setUser(response.data.user);
       setModalReg(false);
-      console.log(response.data)
     } catch (error) {
       console.log(error);
     } finally {
@@ -40,7 +39,6 @@ export const UserProvider = ({ children }: IUserContextProps) => {
       const response = await api.post("login", data);
       setUser(response.data);
       setModalLog(false);
-      console.log(response.data);
     } catch (error) {
       console.log(error);
     } finally {
