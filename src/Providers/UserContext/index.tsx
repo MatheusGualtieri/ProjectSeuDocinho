@@ -22,6 +22,7 @@ export const UserProvider = ({ children }: IUserContextProps) => {
   const userRegister = async (data: IRegisterFormValue) => {
     try {
       setLoading(true);
+      console.log("oi")
       const response = await api.post("register", data);
       setUser(response.data.user);
       setModalReg(false);

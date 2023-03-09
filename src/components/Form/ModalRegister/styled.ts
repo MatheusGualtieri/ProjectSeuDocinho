@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledRegister = styled.div`
-  position: relative;
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,7 +12,8 @@ export const StyledRegister = styled.div`
   width: 100%;
   max-width: 320px;
   height: 80vh;
-
+  top: 10%;
+  left: 30%;
 
   background-color: var(--grey-2);
   z-index: 1001;

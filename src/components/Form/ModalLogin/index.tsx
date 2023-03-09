@@ -9,7 +9,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import Input from "../../Input";
 
 const ModalLogin = () => {
-  const { userLogin, setModalLog } = useContext(UserContext);
+  const { userLogin, setModalLog, setModalReg } = useContext(UserContext);
 
   const formSchemLogin = yup.object().shape({
     email: yup
@@ -33,30 +33,37 @@ const ModalLogin = () => {
 
   return (
     <StyledLoginModal>
-      <header>
-        <h2></h2>
-        <span onClick={() => setModalLog(false)}>x</span>
-      </header>
-      <form onSubmit={handleSubmit(submit)}>
-        <Input
-          label="Email"
-          placeholder="Digite seu novo email"
-          inputId="email"
-          {...register("email")}
-          error={errors.email?.message}
-          type="text"
-        />
+      <div className="boxLogin">
+        <header>
+          <h2>Login</h2>
+          <span onClick={() => setModalLog(false)}>x</span>
+        </header>
+        <form onSubmit={handleSubmit(submit)}>
+          <Input
+            label="Email"
+            placeholder="Digite seu novo email"
+            inputId="email"
+            {...register("email")}
+            error={errors.email?.message}
+            type="text"
+          />
 
-        <Input
-          label="Senha"
-          placeholder="Digite sua nova senha"
-          inputId="password"
-          {...register("password")}
-          error={errors.password?.message}
-          type="password"
-        />
-        <ButtonPrimary type="submit">Enviar</ButtonPrimary>
-      </form>
+          <Input
+            label="Senha"
+            placeholder="Digite sua nova senha"
+            inputId="password"
+            {...register("password")}
+            error={errors.password?.message}
+            type="password"
+          />
+
+          <ButtonPrimary type="submit">Enviar</ButtonPrimary>
+
+           <h3>Não Possui Conta? Cadastre-se!</h3>
+
+          <button className="cadastrar" type="button" onClick={() => setModalReg(true)}>Cadastrar</button>
+        </form>
+      </div>
     </StyledLoginModal>
   );
 };
