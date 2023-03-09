@@ -10,13 +10,21 @@ import { StyledDropDownMenu } from "./styleDropDownMenu";
 import { StyledDropDownSearch } from "./styleDropDownSearch";
 import { ProductContext } from "../../Providers/ProductContext/ProductContext";
 import { SubmitHandler, useForm } from "react-hook-form";
+
 import { ITitle } from "../../Providers/ProductContext/@typesProduct";
+
+import { ITag } from "../../Providers/ProductContext/@typesProduct";
+import React from "react";
+import { UserContext } from "../../Providers/UserContext";
+import { ButtonLink, ButtonPrimary } from "../../styles/buttons";
+
 
 const Header = () => {
   const [dropDown, setDropDown] = useState(false);
   const [dropDownSearch, setDropDownSearch] = useState(false);
   const { register, handleSubmit } = useForm<ITitle>();
   const { searchProduct } = useContext(ProductContext);
+  const { setModalLog, setModalReg } = useContext(UserContext);
 
   const submit: SubmitHandler<ITitle> = (data) => {
     searchProduct(data);
@@ -49,9 +57,10 @@ const Header = () => {
         <div className="conteinerDropDown">
           {dropDown && (
             <StyledDropDownMenu>
-              <button>Login</button>
-              <button>Cadastrar</button>
-              <button>Perfil</button>
+              <ButtonPrimary onClick={() => setModalLog(true)}>Login</ButtonPrimary>
+              <ButtonPrimary onClick={() => setModalReg(true)}>Cadastrar</ButtonPrimary>
+              <ButtonLink to={"/"}>Home</ButtonLink>
+              <ButtonLink to={"/perfil"}>Perfil</ButtonLink>
             </StyledDropDownMenu>
           )}
         </div>
