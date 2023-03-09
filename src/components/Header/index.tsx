@@ -13,6 +13,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { ITag } from "../../Providers/ProductContext/@typesProduct";
 import React from "react";
 import { UserContext } from "../../Providers/UserContext";
+import { ButtonLink, ButtonPrimary } from "../../styles/buttons";
 
 const Header = () => {
   const [dropDown, setDropDown] = useState(false);
@@ -52,13 +53,10 @@ const Header = () => {
         <div className="conteinerDropDown">
           {dropDown && (
             <StyledDropDownMenu>
-              <button type="button" onClick={() => setModalLog(true)}>
-                Login
-              </button>
-              <button type="button" onClick={() => setModalReg(true)}>
-                Cadastrar
-              </button>
-              <button>Perfil</button>
+              <ButtonPrimary onClick={() => setModalLog(true)}>Login</ButtonPrimary>
+              <ButtonPrimary onClick={() => setModalReg(true)}>Cadastrar</ButtonPrimary>
+              <ButtonLink to={"/"}>Home</ButtonLink>
+              <ButtonLink to={"/perfil"}>Perfil</ButtonLink>
             </StyledDropDownMenu>
           )}
         </div>

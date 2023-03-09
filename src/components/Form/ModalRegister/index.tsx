@@ -37,15 +37,18 @@ const ModalRegister = () => {
     resolver: yupResolver(formSchemRegister),
   });
 
-  const submit: SubmitHandler<IRegisterFormValue> = (data) => {
+  const submit: SubmitHandler<IRegisterFormValue>= (data) => {
     userRegister(data);
+    console.log("oi")
   };
 
+
   return (
+
     <StyledRegister>
       <div className="box">
       <header>
-        <h2>cadastro</h2>
+        <h2>Cadastro</h2>
         <span onClick={() => setModalReg(false)}>x</span>
       </header>
       <form onSubmit={handleSubmit(submit)}>
