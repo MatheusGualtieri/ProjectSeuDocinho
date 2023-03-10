@@ -5,8 +5,14 @@ import UpdateForm from "../../components/Form/UpdateForm";
 import UserInfo from "../../components/UserInfo";
 import { StyledContainer } from "../../styles/container";
 import { StyledMain, StyledDiv, StyledLine } from "./style";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 const PerfilPage = () => {
-  const { user } = useUserContext();
+  const { user, token } = useUserContext();
+  const navigate = useNavigate();
+  useEffect(() => {
+    !token ? navigate("/") : null;
+  }, [token]);
   return (
     <>
       <Header />
