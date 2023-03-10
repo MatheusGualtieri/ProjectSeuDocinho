@@ -16,7 +16,7 @@ const Header = () => {
   const [dropDown, setDropDown] = useState(false);
   const [dropDownSearch, setDropDownSearch] = useState(false);
   const { register, handleSubmit } = useForm<ITag>();
-  const { searchProduct } = useContext(ProductContext);
+  const { searchProduct, funcOpenModal } = useContext(ProductContext);
 
   const submit: SubmitHandler<ITag> = (data) => {
     searchProduct(data);
@@ -34,7 +34,7 @@ const Header = () => {
                 onClick={() => setDropDownSearch(!dropDownSearch)}
               />
             }
-            <FaShoppingCart className="image" />
+            <FaShoppingCart className="image" onClick={()=> funcOpenModal(true)} />
             {dropDown ? (
               <MdClose className="image" onClick={() => setDropDown(false)} />
             ) : (
