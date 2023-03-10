@@ -101,7 +101,7 @@ const ModalRegister = () => {
           error={errors.confirmPassword?.message}
           type="password"
         />
-        <ButtonPrimary type="submit">Enviar</ButtonPrimary>
+        <button className="buttonEnviar" type="submit">Enviar</button>
       </form>
       </div>
     </StyledRegister>
