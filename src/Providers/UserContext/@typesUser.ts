@@ -12,7 +12,7 @@ export interface IUser {
 export interface IUserUpdate {
   email: string;
   password: string;
-  confirmPassword: string;
+  confirmPassword?: string;
   adress: string;
   phone: number;
 }
@@ -31,16 +31,18 @@ export interface IUserContext {
   setModalLog: React.Dispatch<React.SetStateAction<boolean>>;
   modalReg: boolean;
   setModalReg: React.Dispatch<React.SetStateAction<boolean>>;
+  token: string | null;
+  logoutUser: () => void;
 }
 export interface ILoginFormValue {
   email: string;
   password: string;
 }
-export interface IRegisterFormValue{
+export interface IRegisterFormValue {
   name: string;
-  email: string; 
+  email: string;
   adress: string;
- phone: string;
- password: string;
- confirmPassword: string;
+  phone: string;
+  password: string;
+  confirmPassword: string;
 }
