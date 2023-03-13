@@ -42,7 +42,10 @@ const Header = () => {
                   onClick={() => setDropDownSearch(!dropDownSearch)}
                 />
               }
-              <FaShoppingCart className="image" />
+              <FaShoppingCart
+                className="image"
+                onClick={() => funcOpenModal(true)}
+              />
               {dropDown ? (
                 <MdClose className="image" onClick={() => setDropDown(false)} />
               ) : (
@@ -51,15 +54,20 @@ const Header = () => {
                   onClick={() => setDropDown(true)}
                 />
               )}
-              <IoMdExit className="image" />
+              <IoMdExit className="image" onClick={logoutUser} />
             </div>
           </div>
           <div className="conteinerDropDown">
             {dropDown && (
               <StyledDropDownMenu>
-                <button>Login</button>
-                <button>Cadastrar</button>
-                <button>Perfil</button>
+                <ButtonPrimary onClick={() => setModalLog(true)}>
+                  Login
+                </ButtonPrimary>
+                <ButtonPrimary onClick={() => setModalReg(true)}>
+                  Cadastrar
+                </ButtonPrimary>
+                <ButtonLink to={"/"}>Home</ButtonLink>
+                <ButtonLink to={"/perfil"}>Perfil</ButtonLink>
               </StyledDropDownMenu>
             )}
           </div>

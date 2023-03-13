@@ -12,7 +12,9 @@ const Footer = () => {
           <a href="https://www.instagram.com/seudocinho.sc/" target="_blank">
             <AiFillInstagram className="image" />
           </a>
-          <IoLogoWhatsapp className="image" />
+          <a href="https://wa.me/5548996252694" target="_blank">
+            <IoLogoWhatsapp className="image" />
+          </a>
         </div>
       </div>
     </StyledFooter>

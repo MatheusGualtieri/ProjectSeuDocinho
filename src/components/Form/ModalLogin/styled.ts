@@ -9,15 +9,23 @@ export const StyledLoginModal = styled.div`
   gap: 20px;
   margin: auto;
 
-  height: 50vh;
+  height: 350px;
   top: 25%;
   left: 3%;
-
 
   background-color: var(--grey-2);
   z-index: 1001;
 
+  span {
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  span:hover {
+    filter: brightness(0.8);
+  }
+
   .boxLogin {
+    height: 100%;
     width: 100%;
     max-width: 320px;
     background-color: var(--grey-2);
@@ -45,8 +53,8 @@ export const StyledLoginModal = styled.div`
     flex-direction: column;
     align-items: flex-start;
     margin-top: 20px;
-    padding: 0 8px;
-    gap: 8px;
+    padding: 0 1rem;
+    gap: 0.75rem;
   }
   label {
     font-size: 13px;
@@ -86,35 +94,30 @@ export const StyledLoginModal = styled.div`
       color: var(--color-tertiary);
     }
   }
-  @media (min-width: 375px){
-   
+  @media (min-width: 375px) {
     left: 10%;
   }
-  @media (min-width: 425px){
-    
+  @media (min-width: 425px) {
     left: 15%;
   }
   @media (min-width: 768px) {
-   
     left: 30%;
   }
   @media (min-width: 1024px) {
     width: 100%;
     max-width: 320px;
     height: 50vh;
-   
+
     left: 35%;
-    form{
+    form {
       padding: 0 15px;
     }
-    
   }
   @media (min-width: 1440px) {
     width: 100%;
     max-width: 320px;
     height: 32vh;
-   
+
     left: 40%;
   }
-
 `;

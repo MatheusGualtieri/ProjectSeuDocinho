@@ -8,6 +8,7 @@ import {
   IRegisterFormValue,
 } from "./@typesUser";
 import { api } from "../../Services";
+import { toast } from "react-toastify";
 
 export const UserContext = createContext({} as IUserContext);
 
@@ -31,8 +32,10 @@ export const UserProvider = ({ children }: IUserContextProps) => {
       window.localStorage.setItem("@USER", JSON.stringify(response.data.user));
       window.localStorage.setItem("@TOKEN", response.data.accessToken);
       setModalReg(false);
+      toast.success("Cadastro efetuado com sucesso, e logado");
     } catch (error) {
       console.log(error);
+      toast.error("Ops, algo deu errado");
     } finally {
       setLoading(false);
     }
@@ -47,8 +50,10 @@ export const UserProvider = ({ children }: IUserContextProps) => {
       window.localStorage.setItem("@USER", JSON.stringify(response.data.user));
       window.localStorage.setItem("@TOKEN", response.data.accessToken);
       setModalLog(false);
+      toast.success("Login efetuado com sucesso");
     } catch (error) {
       console.log(error);
+      toast.error("Ops, algo deu errado");
     } finally {
       setLoading(false);
     }
@@ -64,19 +69,15 @@ export const UserProvider = ({ children }: IUserContextProps) => {
     if (password.length > 0) {
       data = { ...data, password };
     }
-    console.log(data);
     if (adress.length > 0) {
       data = { ...data, adress };
     }
-    console.log(data);
     if (email.length > 0) {
       data = { ...data, email };
     }
-    console.log(data);
     if (phone.length > 0) {
       data = { ...data, phone };
     }
-    console.log(data);
     try {
       setLoading(true);
       const response = await api.patch(`users/${user?.id}`, data, {
@@ -84,11 +85,12 @@ export const UserProvider = ({ children }: IUserContextProps) => {
           Authorization: `Bearer ${token}`,
         },
       });
-      console.log(response);
       setUser(response.data);
       window.localStorage.setItem("@USER", JSON.stringify(response.data));
+      toast.success("Atualização de dados efetuada com sucesso");
     } catch (error) {
       console.log(error);
+      toast.error("Ops, algo deu errado");
     } finally {
       setLoading(false);
     }
@@ -98,6 +100,7 @@ export const UserProvider = ({ children }: IUserContextProps) => {
     setToken(null);
     setUser(null);
     window.localStorage.clear();
+    toast.success("Saiu!");
   };
 
   return (

@@ -41,3 +41,22 @@ export const ButtonLink = styled(Link)`
     color: var(--color-tertiary);
   }
 `;
+
+export const ButtonA = styled.a`
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  color: var(--grey-0);
+  border: 1px solid var(--grey-0);
+  border-radius: var(--border-radius);
+  transition: 0.5s;
+  text-decoration: none;
+  font-size: var(--font-size-2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  :hover {
+    background-color: var(--grey-0);
+    color: var(--color-tertiary);
+  }
+`;

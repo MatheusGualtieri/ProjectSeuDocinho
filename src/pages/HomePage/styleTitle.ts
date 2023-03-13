@@ -5,7 +5,7 @@ export const StyledTitle = styled.div`
 
   .whatsapp {
     position: fixed;
-    top: 107px;
+    top: 210px;
     right: 16px;
 
     width: 30px;
@@ -14,9 +14,13 @@ export const StyledTitle = styled.div`
     color: #a4c639;
 
     cursor: pointer;
+    transition: 0.5s;
+  }
+  .whatsapp:hover {
+    filter: brightness(1.3);
   }
   p {
-    padding: 126px 0px 40px 0px;
+    padding: 2.5rem 0px 2.5rem 0px;
 
     font-size: 1rem;
     font-weight: 700;

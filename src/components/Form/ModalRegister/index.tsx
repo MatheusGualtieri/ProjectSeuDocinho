@@ -6,7 +6,9 @@ import { UserContext } from "../../../Providers/UserContext";
 import { IRegisterFormValue } from "../../../Providers/UserContext/@typesUser";
 import { ButtonPrimary } from "../../../styles/buttons";
 import Input from "../../Input";
+import InputPassword from "../../InputPassword";
 import { StyledRegister } from "./styled";
+import { StyledContainerModal } from "../../../styles/container";
 
 const ModalRegister = () => {
   const { userRegister, setModalReg } = useContext(UserContext);
@@ -42,69 +44,71 @@ const ModalRegister = () => {
   };
 
   return (
-    <StyledRegister>
-      <div className="box">
-        <header>
-          <h2>Cadastro</h2>
-          <span onClick={() => setModalReg(false)}>x</span>
-        </header>
-        <form onSubmit={handleSubmit(submit)}>
-          <Input
-            label="Name"
-            placeholder="Digite seu nome"
-            inputId="name"
-            {...register("name")}
-            error={errors.name?.message}
-            type="text"
-          />
+    <StyledContainerModal>
+      <StyledRegister>
+        <div className="box">
+          <header>
+            <h2>Cadastro</h2>
+            <span onClick={() => setModalReg(false)}>x</span>
+          </header>
+          <form onSubmit={handleSubmit(submit)}>
+            <Input
+              label="Name"
+              placeholder="Digite seu nome"
+              inputId="name"
+              {...register("name")}
+              error={errors.name?.message}
+              type="text"
+            />
 
-          <Input
-            label="Email"
-            placeholder="Digite seu email"
-            inputId="email"
-            {...register("email")}
-            error={errors.email?.message}
-            type="text"
-          />
+            <Input
+              label="Email"
+              placeholder="Digite seu email"
+              inputId="email"
+              {...register("email")}
+              error={errors.email?.message}
+              type="text"
+            />
 
-          <Input
-            label="Endereço"
-            placeholder="Digite seu endereço"
-            inputId="adress"
-            {...register("adress")}
-            error={errors.adress?.message}
-            type="text"
-          />
-          <Input
-            label="Telefone/Celular"
-            placeholder="Digite seu número"
-            inputId="phone"
-            {...register("phone")}
-            error={errors.phone?.message}
-            type="text"
-          />
-          <Input
-            label="Senha"
-            placeholder="Digite sua senha"
-            inputId="password"
-            {...register("password")}
-            error={errors.password?.message}
-            type="password"
-          />
-          <Input
-            label="Confirmar Senha"
-            placeholder="Confirme sua senha"
-            inputId="confirmPassword"
-            {...register("confirmPassword")}
-            error={errors.confirmPassword?.message}
-            type="password"
-          />
-          <button className="buttonEnviar" type="submit">
-            Enviar
-          </button>
-        </form>
-      </div>
-    </StyledRegister>
+            <Input
+              label="Endereço"
+              placeholder="Digite seu endereço"
+              inputId="adress"
+              {...register("adress")}
+              error={errors.adress?.message}
+              type="text"
+            />
+            <Input
+              label="Telefone/Celular"
+              placeholder="Digite seu número"
+              inputId="phone"
+              {...register("phone")}
+              error={errors.phone?.message}
+              type="text"
+            />
+            <InputPassword
+              label="Senha"
+              placeholder="Digite sua senha"
+              inputId="password"
+              {...register("password")}
+              error={errors.password?.message}
+              type="password"
+            />
+            <InputPassword
+              label="Confirmar Senha"
+              placeholder="Confirme sua senha"
+              inputId="confirmPassword"
+              {...register("confirmPassword")}
+              error={errors.confirmPassword?.message}
+              type="password"
+            />
+            <ButtonPrimary className="buttonEnviar" type="submit">
+              Enviar
+            </ButtonPrimary>
+          </form>
+        </div>
+      </StyledRegister>
+    </StyledContainerModal>
   );
 };
 

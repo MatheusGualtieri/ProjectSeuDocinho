@@ -9,19 +9,25 @@ export const StyledRegister = styled.div`
   gap: 20px;
   margin: auto;
 
-
-  height: 78vh;
+  height: 600px;
   top: 20%;
   left: 3%;
 
   background-color: var(--grey-2);
   z-index: 1001;
 
+  span {
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  span:hover {
+    filter: brightness(0.7);
+  }
+
   .box {
     width: 100%;
     max-width: 320px;
     background-color: var(--grey-2);
-    
   }
   header {
     background-color: var(--grey-3);
@@ -31,13 +37,13 @@ export const StyledRegister = styled.div`
     justify-content: space-between;
     margin-top: -30px;
   }
-  header > span{
+  header > span {
     color: var(--grey-0);
     font-size: 20px;
     margin-top: -10px;
     cursor: pointer;
   }
-  header > h2{
+  header > h2 {
     color: var(--grey-0);
     font-size: 14px;
   }
@@ -49,12 +55,12 @@ export const StyledRegister = styled.div`
     padding: 0 8px;
     gap: 8px;
   }
-  label{
+  label {
     font-size: 13px;
     font-weight: 400;
     padding-left: 2px;
   }
-  .buttonEnviar{
+  .buttonEnviar {
     padding: 0.5rem 7.4rem;
     background-color: transparent;
     color: var(--grey-0);
@@ -68,23 +74,20 @@ export const StyledRegister = styled.div`
       color: var(--color-tertiary);
     }
   }
-  @media (min-width: 375px){
+  @media (min-width: 375px) {
     left: 10%;
   }
-  @media (min-width: 425px){
-    
+  @media (min-width: 425px) {
     left: 15%;
   }
   @media (min-width: 768px) {
-  
     left: 30%;
   }
   @media (min-width: 1024px) {
     left: 35%;
-    form{
+    form {
       padding: 0 8px;
     }
-    
   }
   @media (min-width: 1440px) {
     left: 40%;

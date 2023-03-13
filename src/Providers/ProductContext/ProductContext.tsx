@@ -6,6 +6,7 @@ import {
   ITitle,
 } from "./@typesProduct";
 import { api } from "../../Services";
+import { toast } from "react-toastify";
 
 export const ProductContext = createContext({} as IProductContext);
 
@@ -55,6 +56,7 @@ export const ProductProvider = ({ children }: IDefaultProviderProps) => {
     if (!listaCompra?.some((item) => item.id === produto.id)) {
       setListaCompra([...listaCompra, produto]);
     }
+    toast.success("Produto adicionado com sucesso");
   }
   useEffect(() => {
     localStorage.setItem("@Carinho", JSON.stringify(listaCompra));

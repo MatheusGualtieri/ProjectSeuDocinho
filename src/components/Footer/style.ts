@@ -34,8 +34,11 @@ export const StyledFooter = styled.footer`
     height: 20px;
 
     color: var(--color-image);
+    transition: 0.5s;
   }
-
+  .image:hover {
+    filter: brightness(1.3);
+  }
   .footerImage {
     display: flex;
     gap: 20px;

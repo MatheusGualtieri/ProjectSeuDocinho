@@ -44,6 +44,7 @@ const GlobalStyle = createGlobalStyle`
 
     --grey-4: #121214;
     --grey-3: #212529;
+    --grey-3-transparent: rgba(	33, 37, 41,0.5);
     --grey-2: #343B41;
     --grey-1: #868E96;
     --grey-0: #F8F9FA;
