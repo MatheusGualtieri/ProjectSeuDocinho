@@ -1,13 +1,22 @@
 import styled from "styled-components";
 
 export const StyledFooter = styled.footer`
+  width: 100%;
+
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
 
-  position: absolute;
-  bottom: 0px;
+  .conteinerGeral {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+  }
 
+  position: relative;
+  bottom: 0;
   width: 100%;
   height: 47px;
 
@@ -25,8 +34,11 @@ export const StyledFooter = styled.footer`
     height: 20px;
 
     color: var(--color-image);
+    transition: 0.5s;
   }
-
+  .image:hover {
+    filter: brightness(1.3);
+  }
   .footerImage {
     display: flex;
     gap: 20px;

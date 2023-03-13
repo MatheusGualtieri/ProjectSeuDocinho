@@ -6,11 +6,12 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { IUserUpdate } from "../../../Providers/UserContext/@typesUser";
 import { StyledForm } from "./style";
 import { ButtonPrimary } from "../../../styles/buttons";
+import { useUserContext } from "../../../Providers/UserContext";
 
 const formSchema = yup.object({
   email: yup.string().email("E-mail inválido"),
   adress: yup.string(),
-  phone: yup.number(),
+  phone: yup.string(),
   password: yup.string(),
   confirmPassword: yup.string().oneOf([yup.ref("password")], "Senha diferente"),
 });
@@ -24,8 +25,10 @@ const UpdateForm = () => {
     resolver: yupResolver(formSchema),
   });
 
+  const { updateUser } = useUserContext();
+
   const onSubmitFunction = (data: IUserUpdate) => {
-    console.log(data);
+    updateUser(data);
   };
 
   return (

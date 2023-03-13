@@ -6,10 +6,16 @@ import Logo from "../../assets/Logo.png";
 const Footer = () => {
   return (
     <StyledFooter>
-      <img src={Logo} alt="" />
-      <div className="footerImage">
-        <AiFillInstagram className="image" />
-        <IoLogoWhatsapp className="image" />
+      <div className="conteinerGeral">
+        <img src={Logo} alt="" />
+        <div className="footerImage">
+          <a href="https://www.instagram.com/seudocinho.sc/" target="_blank">
+            <AiFillInstagram className="image" />
+          </a>
+          <a href="https://wa.me/5548996252694" target="_blank">
+            <IoLogoWhatsapp className="image" />
+          </a>
+        </div>
       </div>
     </StyledFooter>
   );
