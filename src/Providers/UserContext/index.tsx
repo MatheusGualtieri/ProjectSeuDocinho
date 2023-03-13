@@ -61,7 +61,23 @@ export const UserProvider = ({ children }: IUserContextProps) => {
     email,
     phone,
   }: IUserUpdate) => {
-    const data = { adress, password, email, phone };
+    let data = {};
+    if (password.length > 0) {
+      data = { ...data, password };
+    }
+    console.log(data);
+    if (adress.length > 0) {
+      data = { ...data, adress };
+    }
+    console.log(data);
+    if (email.length > 0) {
+      data = { ...data, email };
+    }
+    console.log(data);
+    if (phone.length > 0) {
+      data = { ...data, phone };
+    }
+    console.log(data);
     try {
       setLoading(true);
       const response = await api.patch(`users/${user?.id}`, data, {
