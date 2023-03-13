@@ -4,8 +4,9 @@ export const StyledDropDownMenu = styled.div`
   display: flex;
   gap: 20px;
 
-  button {
+  button,
+  a {
     height: 40px;
-    width: 80px;
+    width: 7rem;
   }
 `;
