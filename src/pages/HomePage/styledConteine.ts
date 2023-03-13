@@ -15,6 +15,21 @@ export const StyledConteiner = styled.ul`
 
   background-color: var(--color-tertiary);
 
+  .loading {
+    margin: 0 auto;
+  }
+
+  &.empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    p {
+      color: var(--color-image);
+    }
+  }
+
   @media (min-width: 650px) {
     grid-template-columns: repeat(2, 1fr);
   }

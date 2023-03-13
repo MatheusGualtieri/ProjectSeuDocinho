@@ -1,9 +1,19 @@
 import styled from "styled-components";
 
 export const StyledFooter = styled.footer`
+  width: 100%;
+
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
+
+  .conteinerGeral {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+  }
 
   position: relative;
   bottom: 0;

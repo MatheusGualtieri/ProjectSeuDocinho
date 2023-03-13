@@ -11,6 +11,11 @@ export const StyledHeader = styled.header`
   background-color: var(--color-primary);
   box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.25);
 
+  .conteinerGeral {
+    width: 100%;
+    max-width: 1200px;
+  }
+
   .color {
     background-color: var(--color-primary);
     width: 100%;
