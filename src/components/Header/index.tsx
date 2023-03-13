@@ -13,18 +13,17 @@ import { SubmitHandler, useForm } from "react-hook-form";
 
 import { ITitle } from "../../Providers/ProductContext/@typesProduct";
 
-import { ITag } from "../../Providers/ProductContext/@typesProduct";
-import React from "react";
 import { UserContext } from "../../Providers/UserContext";
 import { ButtonLink, ButtonPrimary } from "../../styles/buttons";
-
+import { useUserContext } from "../../Providers/UserContext";
 
 const Header = () => {
   const [dropDown, setDropDown] = useState(false);
   const [dropDownSearch, setDropDownSearch] = useState(false);
+  const { searchProduct, funcOpenModal } = useContext(ProductContext);
   const { register, handleSubmit } = useForm<ITitle>();
-  const { searchProduct } = useContext(ProductContext);
   const { setModalLog, setModalReg } = useContext(UserContext);
+  const { logoutUser } = useUserContext();
 
   const submit: SubmitHandler<ITitle> = (data) => {
     searchProduct(data);
@@ -42,7 +41,10 @@ const Header = () => {
                 onClick={() => setDropDownSearch(!dropDownSearch)}
               />
             }
-            <FaShoppingCart className="image" />
+            <FaShoppingCart
+              className="image"
+              onClick={() => funcOpenModal(true)}
+            />
             {dropDown ? (
               <MdClose className="image" onClick={() => setDropDown(false)} />
             ) : (
@@ -51,14 +53,18 @@ const Header = () => {
                 onClick={() => setDropDown(true)}
               />
             )}
-            <IoMdExit className="image" />
+            <IoMdExit className="image" onClick={() => logoutUser()} />
           </div>
         </div>
         <div className="conteinerDropDown">
           {dropDown && (
             <StyledDropDownMenu>
-              <ButtonPrimary onClick={() => setModalLog(true)}>Login</ButtonPrimary>
-              <ButtonPrimary onClick={() => setModalReg(true)}>Cadastrar</ButtonPrimary>
+              <ButtonPrimary onClick={() => setModalLog(true)}>
+                Login
+              </ButtonPrimary>
+              <ButtonPrimary onClick={() => setModalReg(true)}>
+                Cadastrar
+              </ButtonPrimary>
               <ButtonLink to={"/"}>Home</ButtonLink>
               <ButtonLink to={"/perfil"}>Perfil</ButtonLink>
             </StyledDropDownMenu>

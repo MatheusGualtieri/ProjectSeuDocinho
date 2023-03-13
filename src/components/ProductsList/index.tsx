@@ -3,7 +3,7 @@ import { ProductContext } from "../../Providers/ProductContext/ProductContext";
 import { StyledProductList } from "./styled";
 
 const ProducList = ({ id }: { id: number }) => {
-  const { products } = useContext(ProductContext);
+  const { products, addListProduct } = useContext(ProductContext);
   const findProduct = products?.filter((product) => product.id == id);
 
   return (
@@ -17,7 +17,7 @@ const ProducList = ({ id }: { id: number }) => {
               <p className="description">{product.description}</p>
               <span>{product.price}</span>
             </div>
-            <button>Adicionar ao carrinho</button>
+            <button onClick={()=> addListProduct(product)}>Adicionar ao carrinho</button>
           </div>
         </div>
       ))}
