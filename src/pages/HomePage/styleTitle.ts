@@ -12,6 +12,8 @@ export const StyledTitle = styled.div`
     height: 30px;
 
     color: #a4c639;
+
+    cursor: pointer;
   }
   p {
     padding: 126px 0px 40px 0px;
