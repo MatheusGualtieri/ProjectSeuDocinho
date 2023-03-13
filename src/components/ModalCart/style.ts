@@ -3,12 +3,19 @@ export const StyleCart = styled.div`
   position: absolute;
   width: 100%;
   height: 300%;
-  margin-top: 80px;
-  background-color: var(--grey-3);
-  div {
+  background-color: var(--grey-3-transparent);
+  z-index: 3;
+  .containerModal {
+    position: sticky;
+    top: 100px;
     .close {
       color: var(--color-image);
       font-size: 30px;
+      cursor: pointer;
+      transition: 0.5s;
+    }
+    .close:hover {
+      filter: brightness(1.3);
     }
     background-color: var(--grey-2);
     margin: 20px;
@@ -22,7 +29,7 @@ export const StyleCart = styled.div`
       height: 65px;
       background-color: var(--grey-4);
       flex-direction: row-reverse;
-      justify-content: space-around;
+      justify-content: space-between;
     }
     h1 {
       color: var(--color-image);
@@ -80,21 +87,6 @@ export const StyleCart = styled.div`
           h4 {
             color: var(--color-add-product);
           }
-
-          button {
-            background-color: transparent;
-            border: 1px solid var(--color-add-product);
-            height: auto;
-            width: auto;
-            border-radius: 3px;
-            padding: 2px 3px ;
-            margin-right: 10px;
-            color: var(--color-add-product);
-          }
-          button:hover {
-            color: var(--grey-100);
-            text-decoration-line: underline;
-          }
         }
       }
     }
@@ -117,13 +109,11 @@ export const StyleCart = styled.div`
       p {
         font-weight: 600;
         font-size: 1rem;
-
       }
       samp {
         color: var(--color-add-product);
         font-weight: 600;
         font-size: 1rem;
-
       }
     }
     .footerButton {
@@ -140,12 +130,15 @@ export const StyleCart = styled.div`
         font-weight: 600;
         background-color: var(--grey-2);
         font-size: 1rem;
+        transition: 0.5s;
       }
       .whatsWapp {
+        font-weight: 600;
         border: 1px solid var(--color-sucess);
         color: var(--color-sucess);
       }
-      .whatsWapp:focus{
+      .whatsWapp:focus,
+      .whatsWapp:hover {
         color: var(--grey-2);
         background-color: var(--color-sucess);
       }
@@ -153,19 +146,20 @@ export const StyleCart = styled.div`
         border: 1px solid var(--color-negative);
         color: var(--color-negative);
       }
-      .remuv:focus{
+      .remuv:focus,
+      .remuv:hover {
         color: var(--grey-2);
         background-color: var(--color-negative);
       }
     }
   }
-  @media screen and (min-width:800px) {
+  @media screen and (min-width: 800px) {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 110%;
-    background-color: rgba(33,37,41,0.80);
-    div {
+    background-color: rgba(33, 37, 41, 0.8);
+    .containerModal {
       width: 550px;
     }
   }

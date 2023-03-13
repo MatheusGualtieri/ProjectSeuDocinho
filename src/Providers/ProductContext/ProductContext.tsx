@@ -6,6 +6,7 @@ import {
   ITitle,
 } from "./@typesProduct";
 import { api } from "../../Services";
+import { toast } from "react-toastify";
 
 export const ProductContext = createContext({} as IProductContext);
 
@@ -49,12 +50,13 @@ export const ProductProvider = ({ children }: IDefaultProviderProps) => {
   );
 
   function funcOpenModal(boolean: boolean) {
-      setOpenModal(boolean);
+    setOpenModal(boolean);
   }
   function addListProduct(produto: IProducts) {
-    if(!listaCompra?.some(item => item.id === produto.id)){
+    if (!listaCompra?.some((item) => item.id === produto.id)) {
       setListaCompra([...listaCompra, produto]);
     }
+    toast.success("Produto adicionado com sucesso");
   }
   useEffect(() => {
     localStorage.setItem("@Carinho", JSON.stringify(listaCompra));

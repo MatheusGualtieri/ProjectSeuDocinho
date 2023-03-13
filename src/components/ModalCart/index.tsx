@@ -12,7 +12,7 @@ const ModalCart = () => {
     <>
       {openModal ? (
         <StyleCart>
-          <div>
+          <div className="containerModal">
             <header>
               <MdClose className="close" onClick={() => funcOpenModal(false)} />
               <h1>Carrinho de compras</h1>

@@ -3,15 +3,25 @@ import styled from "styled-components";
 export const StyledProductList = styled.li`
   margin: 0 auto;
   width: 288px;
-  height: 402px;
+  height: 450px;
 
+  border: 2.5px solid var(--color-primary);
   border-radius: 5px;
 
   background-color: var(--color-primary);
+  transition: 0.5s;
+  :hover {
+    width: 298px;
+    height: 460px;
+    border-color: var(--grey-2);
+    img {
+      height: 182px;
+    }
+  }
 
   img {
     width: 100%;
-    height: 130px;
+    height: 180px;
 
     border-radius: 5px 5px 0px 0px;
   }
@@ -51,21 +61,23 @@ export const StyledProductList = styled.li`
   }
 
   .description {
-    width: 280px;
+    width: 100%;
     height: 60px;
 
     font-size: 0 9rem;
     font-weight: 400;
-
+    text-align: left;
     color: var(--grey-1);
   }
 
   .info {
+    padding: 0 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
 
     gap: 16px;
+    box-sizing: border-box;
   }
 
   span {

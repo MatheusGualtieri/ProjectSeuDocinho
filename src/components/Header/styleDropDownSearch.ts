@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const StyledDropDownSearch = styled.div`
+  padding-top: 0.5rem;
   input {
     height: 40px;
 
@@ -23,5 +24,10 @@ export const StyledDropDownSearch = styled.div`
     background-color: var(--color-tertiary);
 
     color: var(--color-image);
+    transition: 0.5s;
+  }
+
+  button:hover {
+    filter: brightness(1.1);
   }
 `;

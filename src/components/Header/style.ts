@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const StyledHeader = styled.header`
-  position: fixed;
+  position: sticky;
   align-items: center;
-
+  top: 0;
   width: 100%;
   min-height: 72px;
   padding: 10px;
@@ -61,6 +61,10 @@ export const StyledHeader = styled.header`
       cursor: pointer;
 
       color: var(--color-image);
+      transition: 0.5s;
+    }
+    .image:hover {
+      filter: brightness(1.3);
     }
   }
 `;

@@ -7,6 +7,8 @@ import { StyledLoginModal } from "./styled";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Input from "../../Input";
+import InputPassword from "../../InputPassword";
+import { StyledContainerModal } from "../../../styles/container";
 
 const ModalLogin = () => {
   const { userLogin, setModalLog, setModalReg } = useContext(UserContext);
@@ -32,39 +34,49 @@ const ModalLogin = () => {
   };
 
   return (
-    <StyledLoginModal>
-      <div className="boxLogin">
-        <header>
-          <h2>Login</h2>
-          <span onClick={() => setModalLog(false)}>x</span>
-        </header>
-        <form onSubmit={handleSubmit(submit)}>
-          <Input
-            label="Email"
-            placeholder="Digite seu novo email"
-            inputId="email"
-            {...register("email")}
-            error={errors.email?.message}
-            type="text"
-          />
+    <StyledContainerModal>
+      <StyledLoginModal>
+        <div className="boxLogin">
+          <header>
+            <h2>Login</h2>
+            <span onClick={() => setModalLog(false)}>x</span>
+          </header>
+          <form onSubmit={handleSubmit(submit)}>
+            <Input
+              label="Email"
+              placeholder="Digite seu novo email"
+              inputId="email"
+              {...register("email")}
+              error={errors.email?.message}
+              type="text"
+            />
 
-          <Input
-            label="Senha"
-            placeholder="Digite sua nova senha"
-            inputId="password"
-            {...register("password")}
-            error={errors.password?.message}
-            type="password"
-          />
+            <InputPassword
+              label="Senha"
+              placeholder="Digite sua nova senha"
+              inputId="password"
+              {...register("password")}
+              error={errors.password?.message}
+              type="password"
+            />
 
-          <button className="buttonEnviar" type="submit">Enviar</button>
+            <ButtonPrimary className="buttonEnviar" type="submit">
+              Enviar
+            </ButtonPrimary>
 
-           <h3>Não Possui Conta? Cadastre-se!</h3>
+            <h3>Não Possui Conta? Cadastre-se!</h3>
 
-          <button className="cadastrar" type="button" onClick={() => setModalReg(true)}>Cadastrar</button>
-        </form>
-      </div>
-    </StyledLoginModal>
+            <ButtonPrimary
+              className="cadastrar"
+              type="button"
+              onClick={() => setModalReg(true)}
+            >
+              Cadastrar
+            </ButtonPrimary>
+          </form>
+        </div>
+      </StyledLoginModal>
+    </StyledContainerModal>
   );
 };
 

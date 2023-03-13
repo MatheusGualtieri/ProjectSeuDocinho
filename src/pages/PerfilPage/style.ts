@@ -1,13 +1,15 @@
 import styled from "styled-components";
 
 export const StyledMain = styled.div`
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1rem;
   width: 100%;
+  @media (min-width: 800px) {
+    height: 88vh;
+  }
 `;
 export const StyledDiv = styled.div`
   width: 100%;

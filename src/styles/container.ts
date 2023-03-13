@@ -11,3 +11,10 @@ export const StyledContainer = styled.div`
     max-width: 85%;
   }
 `;
+export const StyledContainerModal = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 300%;
+  background-color: var(--grey-3-transparent);
+  z-index: 3;
+`;
