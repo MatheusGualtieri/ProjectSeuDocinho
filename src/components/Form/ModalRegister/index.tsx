@@ -21,12 +21,12 @@ const ModalRegister = () => {
       .string()
       .required("Senha é obrigatória")
       .min(6, "A senha precisa ter pelo menos seis caracteres"),
-    confirmpassword: yup
+      confirmPassword: yup
       .string()
       .required("Confirmar a senha é obrigatório")
       .oneOf([yup.ref("password")], "As senhas não correspondem"),
-    bio: yup.string().required("Bio é obrigatória."),
-    contact: yup.string().required("Contato é obrigatório."),
+      adress: yup.string().required("Endereço é obrigatória."),
+      phone: yup.string().required("Telefone/Celular é obrigatório."),
   });
 
   const {
@@ -39,7 +39,6 @@ const ModalRegister = () => {
 
   const submit: SubmitHandler<IRegisterFormValue>= (data) => {
     userRegister(data);
-    console.log("oi")
   };
 
 
@@ -102,7 +101,7 @@ const ModalRegister = () => {
           error={errors.confirmPassword?.message}
           type="password"
         />
-        <ButtonPrimary type="submit">Enviar</ButtonPrimary>
+        <button className="buttonEnviar" type="submit">Enviar</button>
       </form>
       </div>
     </StyledRegister>

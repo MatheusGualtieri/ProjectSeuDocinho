@@ -9,11 +9,10 @@ export const StyledLoginModal = styled.div`
   gap: 20px;
   margin: auto;
 
-  width: 100%;
-  max-width: 320px;
-  height: 45vh;
+  height: 50vh;
   top: 25%;
-  left: 30%;
+  left: 3%;
+
 
   background-color: var(--grey-2);
   z-index: 1001;
@@ -46,7 +45,7 @@ export const StyledLoginModal = styled.div`
     flex-direction: column;
     align-items: flex-start;
     margin-top: 20px;
-    padding: 0 15px;
+    padding: 0 8px;
     gap: 8px;
   }
   label {
@@ -58,8 +57,22 @@ export const StyledLoginModal = styled.div`
     color: var(--grey-0);
     font-size: 14px;
   }
+  .buttonEnviar {
+    padding: 0.5rem 7.4rem;
+    background-color: transparent;
+    color: var(--grey-0);
+    border: 1px solid var(--grey-0);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-2);
+    transition: 0.5s;
+
+    :hover {
+      background-color: var(--grey-0);
+      color: var(--color-tertiary);
+    }
+  }
   .cadastrar {
-    padding: 0.5rem 7rem;
+    padding: 0.5rem 6.8rem;
     background-color: var(--grey-0);
     color: var(--grey-4);
     font-size: 14px;
@@ -73,4 +86,35 @@ export const StyledLoginModal = styled.div`
       color: var(--color-tertiary);
     }
   }
+  @media (min-width: 375px){
+   
+    left: 10%;
+  }
+  @media (min-width: 425px){
+    
+    left: 15%;
+  }
+  @media (min-width: 768px) {
+   
+    left: 30%;
+  }
+  @media (min-width: 1024px) {
+    width: 100%;
+    max-width: 320px;
+    height: 50vh;
+   
+    left: 35%;
+    form{
+      padding: 0 15px;
+    }
+    
+  }
+  @media (min-width: 1440px) {
+    width: 100%;
+    max-width: 320px;
+    height: 32vh;
+   
+    left: 40%;
+  }
+
 `;

@@ -13,16 +13,20 @@ import { SubmitHandler, useForm } from "react-hook-form";
 
 import { ITitle } from "../../Providers/ProductContext/@typesProduct";
 
-import React from "react";
+
 import { UserContext } from "../../Providers/UserContext";
 import { ButtonLink, ButtonPrimary } from "../../styles/buttons";
+import { useUserContext } from "../../Providers/UserContext";
+
 
 const Header = () => {
   const [dropDown, setDropDown] = useState(false);
   const [dropDownSearch, setDropDownSearch] = useState(false);
+  const { searchProduct, funcOpenModal } = useContext(ProductContext);
   const { register, handleSubmit } = useForm<ITitle>();
   const { searchProduct } = useContext(ProductContext);
   const { setModalLog, setModalReg } = useContext(UserContext);
+  const { logoutUser } = useUserContext();
 
   const submit: SubmitHandler<ITitle> = (data) => {
     searchProduct(data);
@@ -78,6 +82,7 @@ const Header = () => {
               </StyledDropDownSearch>
             )}
           </div>
+
         </div>
       </div>
     </StyledHeader>

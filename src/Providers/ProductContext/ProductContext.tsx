@@ -42,8 +42,37 @@ export const ProductProvider = ({ children }: IDefaultProviderProps) => {
     getProduct();
   }, []);
 
+  const [openModal, setOpenModal] = useState(false);
+  const listaDeCompraSalva = localStorage.getItem("@Carinho");
+  const [listaCompra, setListaCompra] = useState<IProducts[] | []>(
+    listaDeCompraSalva ? JSON.parse(listaDeCompraSalva) : []
+  );
+
+  function funcOpenModal(boolean: boolean) {
+      setOpenModal(boolean);
+  }
+  function addListProduct(produto: IProducts) {
+    if(!listaCompra?.some(item => item.id === produto.id)){
+      setListaCompra([...listaCompra, produto]);
+    }
+  }
+  useEffect(() => {
+    localStorage.setItem("@Carinho", JSON.stringify(listaCompra));
+  }, [listaCompra]);
+
   return (
-    <ProductContext.Provider value={{ products, setProducts, searchProduct }}>
+    <ProductContext.Provider
+      value={{
+        products,
+        setProducts,
+        searchProduct,
+        listaCompra,
+        openModal,
+        addListProduct,
+        setListaCompra,
+        funcOpenModal,
+      }}
+    >
       {children}
     </ProductContext.Provider>
   );
