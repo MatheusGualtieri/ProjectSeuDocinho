@@ -57,7 +57,7 @@ const ModalLogin = () => {
             type="password"
           />
 
-          <ButtonPrimary type="submit">Enviar</ButtonPrimary>
+          <button className="buttonEnviar" type="submit">Enviar</button>
 
            <h3>Não Possui Conta? Cadastre-se!</h3>
 
