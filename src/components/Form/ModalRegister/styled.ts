@@ -9,8 +9,7 @@ export const StyledRegister = styled.div`
   gap: 20px;
   margin: auto;
 
-  width: 100%;
-  max-width: 300px;
+
   height: 68vh;
   top: 28%;
   left: 3%;
@@ -84,7 +83,7 @@ export const StyledRegister = styled.div`
   @media (min-width: 1024px) {
     top: 15%;
     left: 35%;
-    height: 65vh;
+    height: 85vh;
     form{
       padding: 0 8px;
     }

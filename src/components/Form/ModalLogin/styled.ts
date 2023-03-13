@@ -9,8 +9,6 @@ export const StyledLoginModal = styled.div`
   gap: 20px;
   margin: auto;
 
-  width: 100%;
-  max-width: 300px;
   height: 50vh;
   top: 25%;
   left: 3%;
@@ -100,7 +98,7 @@ export const StyledLoginModal = styled.div`
   @media (min-width: 1024px) {
     width: 100%;
     max-width: 320px;
-    height: 37vh;
+    height: 50vh;
     top: 15%;
     left: 35%;
     form{
