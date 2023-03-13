@@ -5,7 +5,7 @@ export const StyledTitle = styled.div`
 
   .whatsapp {
     position: fixed;
-    top: 90px;
+    top: 107px;
     right: 16px;
 
     width: 30px;
