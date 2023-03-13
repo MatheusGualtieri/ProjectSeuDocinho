@@ -5,6 +5,7 @@ import {
   IUserUpdate,
   IUser,
   ILoginFormValue,
+  IRegisterFormValue,
 } from "./@typesUser";
 import { api } from "../../Services";
 
@@ -15,13 +16,31 @@ export const UserProvider = ({ children }: IUserContextProps) => {
   const tokenOnLocalStorage = window.localStorage.getItem("") || null;
   const [token, setToken] = useState(tokenOnLocalStorage);
   const [loading, setLoading] = useState(false);
+  const [modalLog, setModalLog] = useState(false);
+  const [modalReg, setModalReg] = useState(false);
+
+  const userRegister = async (data: IRegisterFormValue) => {
+    try {
+      setLoading(true);
+      console.log("oi")
+      const response = await api.post("register", data);
+      setUser(response.data.user);
+      setModalReg(false);
+      console.log(response.data)
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const userLogin = async (data: ILoginFormValue) => {
     try {
       setLoading(true);
-      const response = await api.post("/signup", data);
+      const response = await api.post("login", data);
       setUser(response.data);
-      console.log(response);
+      setModalLog(false);
+      console.log(response.data);
     } catch (error) {
       console.log(error);
     } finally {
@@ -32,7 +51,7 @@ export const UserProvider = ({ children }: IUserContextProps) => {
   const updateUser = async (data: IUserUpdate) => {
     try {
       setLoading(true);
-      const response = await api.put("/users", data, {
+      const response = await api.put("users", data, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -47,7 +66,19 @@ export const UserProvider = ({ children }: IUserContextProps) => {
   };
 
   return (
-    <UserContext.Provider value={{ user, loading, updateUser, userLogin }}>
+    <UserContext.Provider
+      value={{
+        user,
+        loading,
+        updateUser,
+        userLogin,
+        userRegister,
+        modalLog,
+        setModalLog,
+        modalReg,
+        setModalReg,
+      }}
+    >
       {children}
     </UserContext.Provider>
   );
