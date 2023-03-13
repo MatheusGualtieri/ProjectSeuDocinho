@@ -20,6 +20,7 @@ import { useUserContext } from "../../Providers/UserContext";
 const Header = () => {
   const [dropDown, setDropDown] = useState(false);
   const [dropDownSearch, setDropDownSearch] = useState(false);
+  const { searchProduct, funcOpenModal } = useContext(ProductContext);
   const { register, handleSubmit } = useForm<ITitle>();
   const { searchProduct } = useContext(ProductContext);
   const { setModalLog, setModalReg } = useContext(UserContext);
@@ -41,7 +42,7 @@ const Header = () => {
                 onClick={() => setDropDownSearch(!dropDownSearch)}
               />
             }
-            <FaShoppingCart className="image" />
+            <FaShoppingCart className="image" onClick={()=> funcOpenModal(true)} />
             {dropDown ? (
               <MdClose className="image" onClick={() => setDropDown(false)} />
             ) : (
