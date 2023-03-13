@@ -11,10 +11,8 @@ import { useUserContext } from "../../../Providers/UserContext";
 const formSchema = yup.object({
   email: yup.string().email("E-mail inválido"),
   adress: yup.string(),
-  phone: yup.number(),
-  password: yup
-    .string()
-    .min(6, "A senha precisa ter pelo menos seis caracteres"),
+  phone: yup.string(),
+  password: yup.string(),
   confirmPassword: yup.string().oneOf([yup.ref("password")], "Senha diferente"),
 });
 

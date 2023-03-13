@@ -14,7 +14,7 @@ export interface IUserUpdate {
   password: string;
   confirmPassword?: string;
   adress: string;
-  phone: number;
+  phone: string;
 }
 
 export interface IUserContextProps {
