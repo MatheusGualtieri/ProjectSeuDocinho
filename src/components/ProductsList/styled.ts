@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledProductList = styled.li`
   margin: 0 auto;
   width: 288px;
-  height: 360px;
+  height: 402px;
 
   border-radius: 5px;
 
@@ -23,6 +23,23 @@ export const StyledProductList = styled.li`
     color: var(--color-add-product);
   }
 
+  .tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 70px;
+    height: 22px;
+
+    font-size: 0.6rem;
+    font-weight: 700;
+
+    background-color: var(--color-tertiary);
+    color: var(--grey-1);
+
+    border-radius: 5px;
+  }
+
   .conteinerInfo {
     display: flex;
     flex-direction: column;
@@ -34,6 +51,7 @@ export const StyledProductList = styled.li`
   }
 
   .description {
+    width: 280px;
     height: 60px;
 
     font-size: 0 9rem;

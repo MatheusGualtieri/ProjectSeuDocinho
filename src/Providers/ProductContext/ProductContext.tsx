@@ -24,7 +24,6 @@ export const ProductProvider = ({ children }: IDefaultProviderProps) => {
   };
 
   const searchProduct = (data: ITitle) => {
-    console.log(data);
     if (selectProduct !== null) {
       const productFound = selectProduct.filter((product) => {
         return data.title === ""
@@ -32,9 +31,9 @@ export const ProductProvider = ({ children }: IDefaultProviderProps) => {
           : product.title.toLowerCase().includes(data.title.toLowerCase()) ||
               product.description
                 .toLowerCase()
-                .includes(data.title.toLowerCase());
+                .includes(data.title.toLowerCase()) ||
+              product.tag.toLowerCase().includes(data.title.toLowerCase());
       });
-      console.log(productFound);
       setProducts(productFound);
     }
   };

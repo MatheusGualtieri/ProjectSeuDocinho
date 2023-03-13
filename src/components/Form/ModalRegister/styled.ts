@@ -9,10 +9,9 @@ export const StyledRegister = styled.div`
   gap: 20px;
   margin: auto;
 
-  width: 100%;
-  max-width: 300px;
-  height: 68vh;
-  top: 28%;
+
+  height: 78vh;
+  top: 20%;
   left: 3%;
 
   background-color: var(--grey-2);
@@ -73,26 +72,21 @@ export const StyledRegister = styled.div`
     left: 10%;
   }
   @media (min-width: 425px){
-    top: 26%;
+    
     left: 15%;
-    height: 70vh;
   }
   @media (min-width: 768px) {
-    top: 26%;
+  
     left: 30%;
   }
   @media (min-width: 1024px) {
-    top: 15%;
     left: 35%;
-    height: 65vh;
     form{
       padding: 0 8px;
     }
     
   }
   @media (min-width: 1440px) {
-    top: 15%;
     left: 40%;
-    height: 59vh;
   }
 `;

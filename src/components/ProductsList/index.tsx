@@ -13,7 +13,8 @@ const ProducList = ({ id }: { id: number }) => {
           <img src={product.img} />
           <div className="conteinerInfo">
             <div className="info">
-              <p>{product.tag} </p>
+              <p>{product.title} </p>
+              <p className="tag">{product.tag}</p>
               <p className="description">{product.description}</p>
               <span>{product.price}</span>
             </div>

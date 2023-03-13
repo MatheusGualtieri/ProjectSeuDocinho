@@ -9,8 +9,6 @@ export const StyledLoginModal = styled.div`
   gap: 20px;
   margin: auto;
 
-  width: 100%;
-  max-width: 300px;
   height: 50vh;
   top: 25%;
   left: 3%;
@@ -89,19 +87,22 @@ export const StyledLoginModal = styled.div`
     }
   }
   @media (min-width: 375px){
+   
     left: 10%;
   }
   @media (min-width: 425px){
+    
     left: 15%;
   }
   @media (min-width: 768px) {
+   
     left: 30%;
   }
   @media (min-width: 1024px) {
     width: 100%;
     max-width: 320px;
-    height: 37vh;
-    top: 15%;
+    height: 50vh;
+   
     left: 35%;
     form{
       padding: 0 15px;
@@ -112,7 +113,7 @@ export const StyledLoginModal = styled.div`
     width: 100%;
     max-width: 320px;
     height: 32vh;
-    top: 15%;
+   
     left: 40%;
   }
 
